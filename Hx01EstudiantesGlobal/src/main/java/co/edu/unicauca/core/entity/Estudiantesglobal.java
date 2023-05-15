@@ -16,6 +16,12 @@ public class Estudiantesglobal {
 	
 	@Column(name = "NOMBRE", nullable=false)
 	private String nombre;
+	
+	@Column(name = "USUARIO")
+	private String usuario;
+	
+	@Column(name = "FOTO")
+	private String foto;
 
 	public Estudiantesglobal() {
 		// TODO Auto-generated constructor stub
@@ -41,6 +47,22 @@ public class Estudiantesglobal {
 
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
+	}
+
+	public String getUsuario() {
+		return usuario;
+	}
+
+	public void setUsuario(String usuario) {
+		this.usuario = usuario;
+	}
+
+	public String getFoto() {
+		return foto;
+	}
+
+	public void setFoto(String foto) {
+		this.foto = foto;
 	}
 	
 	
