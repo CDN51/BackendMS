@@ -10,6 +10,5 @@ import co.edu.unicauca.core.entity.Estudiantesglobal;
 public interface EstudiantesGlobalServiceInt {
 
 	public List<Estudiantesglobal> getEstudiantesglobales();
-	public Estudiantesglobal buscarPorNombre(String nombre);
 		
 }

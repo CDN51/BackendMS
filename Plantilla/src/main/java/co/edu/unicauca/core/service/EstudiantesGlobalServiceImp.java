@@ -17,14 +17,7 @@ public class EstudiantesGlobalServiceImp implements EstudiantesGlobalServiceInt 
 
 	@Override
 	public List<Estudiantesglobal> getEstudiantesglobales() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public Estudiantesglobal buscarPorNombre(String nombre) {
-		// TODO Auto-generated method stub
-		return null;
+		return estGlRep.findAll();
 	}
 	
 }
