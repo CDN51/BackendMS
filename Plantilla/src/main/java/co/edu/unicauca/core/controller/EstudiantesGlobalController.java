@@ -22,7 +22,15 @@ import co.edu.unicauca.core.service.EstudiantesGlobalServiceInt;
 
 @Controller
 @CrossOrigin(origins = "*")
-public class pController {	
+public class EstudiantesGlobalController {	
 	
+	@Autowired
+	private EstudiantesGlobalServiceInt estGlService;
+	
+	@GetMapping("/estudiantesglobales")
+	@ResponseBody
+	public List<Estudiantesglobal> estudiantesGlobales(){
+		return estGlService.getEstudiantesglobales();
+	}
 	
 }
