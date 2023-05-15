@@ -9,7 +9,7 @@ import co.edu.unicauca.core.entity.Estudiantesglobal;
 import jakarta.transaction.Transactional;
 
 @Repository
-public interface aRep extends JpaRepository<Estudiantesglobal, Integer> {
+public interface EstudiantesGlobalRep extends JpaRepository<Estudiantesglobal, Integer> {
 /*
 	@Modifying
 	@Transactional

@@ -16,8 +16,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import co.edu.unicauca.core.entity.Estudiantesglobal;
-import co.edu.unicauca.core.repository.aRep;
-import co.edu.unicauca.core.service.aServiceInt;
+import co.edu.unicauca.core.repository.EstudiantesGlobalRep;
+import co.edu.unicauca.core.service.EstudiantesGlobalServiceInt;
 
 
 @Controller
