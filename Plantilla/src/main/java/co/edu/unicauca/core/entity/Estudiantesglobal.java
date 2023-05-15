@@ -15,13 +15,13 @@ public class Estudiantesglobal {
 	private Integer estudiante_id;
 	
 	@Column(name = "NOMBRE", nullable=false)
-	private Integer nombre;
+	private String nombre;
 
 	public Estudiantesglobal() {
 		// TODO Auto-generated constructor stub
 	}
 	
-	public Estudiantesglobal(Integer estudiante_id, Integer nombre) {
+	public Estudiantesglobal(Integer estudiante_id, String nombre) {
 		super();
 		this.estudiante_id = estudiante_id;
 		this.nombre = nombre;
@@ -35,11 +35,11 @@ public class Estudiantesglobal {
 		this.estudiante_id = estudiante_id;
 	}
 
-	public Integer getNombre() {
+	public String getNombre() {
 		return nombre;
 	}
 
-	public void setNombre(Integer nombre) {
+	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
 	
