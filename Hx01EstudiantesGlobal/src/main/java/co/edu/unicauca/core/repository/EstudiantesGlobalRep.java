@@ -23,5 +23,5 @@ public interface EstudiantesGlobalRep extends JpaRepository<Estudiantesglobal, I
 	@Modifying
 	@Transactional
 	@Query(value = "SELECT * FROM estudiantesglobal where ESTUDIANTE_ID in :param ", nativeQuery=true)
-	List<Estudiantesglobal> buscarEstudiantesIds( String param);
+	List<Estudiantesglobal> buscarEstudiantesIds( List<Integer> param);
 }
