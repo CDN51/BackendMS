@@ -32,5 +32,12 @@ public class EstudiantesGlobalController {
 	public List<Estudiantesglobal> estudiantesGlobales(){
 		return estGlService.getEstudiantesglobales();
 	}
+	//
+	@GetMapping("/estudiantesglobalesid")
+	@ResponseBody
+	public List<Estudiantesglobal> estudiantesGlobalesId(@RequestBody List<Integer> ids){
+		return estGlService.getEstudiantesglobalesIds(ids);
+	}
+	
 	
 }
