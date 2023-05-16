@@ -38,7 +38,9 @@ public class EstudianteAsignaturaController {
 	// HE08 - HU02
 	@DeleteMapping("/EliminarEstudiante/")
 	@ResponseBody
-	public void eliminarEstudiante(@RequestParam Integer idEstudiante,@RequestParam Integer id_asignatura) {
+	public void eliminarEstudiante(@RequestBody EstudianteAsignatura estudianteAsignatura ) {
+		Integer idEstudiante = estudianteAsignatura.getEstudiante_id();
+		Integer id_asignatura = estudianteAsignatura.getAsignatura_id();
 		estudianteAsignaturaServiceInt.eliminarEstudiante(idEstudiante, id_asignatura);
 	}
 
