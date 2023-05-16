@@ -16,5 +16,9 @@ public interface EstudianteAsignaturaRep extends JpaRepository<EstudianteAsignat
 	@Query(value = "DELETE FROM estudianteasignatura WHERE ESTUDIANTE_ID=:idEstudiante AND ASIGNATURA_ID=:id_asignatura", nativeQuery=true)
 	void eliminar( Integer idEstudiante,  Integer id_asignatura);
 	
+	
+	@Modifying
+	@Transactional
+	@Query(value = "DELETE FROM estudianteasignatura WHERE ASIGNATURA_ID=:idAsignatura", nativeQuery=true)
 	void eliminarEstudiantesPorAsignatura(Integer idAsignatura);
 }

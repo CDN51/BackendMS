@@ -40,31 +40,7 @@ public class EstudianteAsignaturaServiceImp implements EstudianteAsignaturaServi
 	}
 
 	@Override
-	public void eliminarTodosLosEstudiantes() {
-		estudianteAsignaturaRep.deleteAll();
+	public void eliminarTodosLosEstudiantes(Integer idAsignatura) {
+		estudianteAsignaturaRep.eliminarEstudiantesPorAsignatura(idAsignatura);
 	}
-	
-	
-
-
-
-
-//	@Override
-//	public void eliminarEstudianteId(Integer estudianteId) {
-//		estudianteAsignaturaRep.deleteById(estudianteId);
-//		
-//	}
-	
-
-
-
-	
-
-
-
-
-
-
-
-	
 }

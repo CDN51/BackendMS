@@ -58,10 +58,10 @@ public class EstudianteAsignaturaController {
 	}
 	
 	// HE08 - HU05
-	@DeleteMapping("/EliminarEstudiantes")
+	@DeleteMapping("/EliminarEstudiantes/")
 	@ResponseBody
-	public void eliminarEstudiantes() {
-		estudianteAsignaturaServiceInt.eliminarTodosLosEstudiantes();
+	public void eliminarEstudiantes(Integer idAsignatura) {
+		estudianteAsignaturaServiceInt.eliminarTodosLosEstudiantes(idAsignatura);
 	}
 	
 }
