@@ -1,5 +1,7 @@
 package co.edu.unicauca.core.repository;
 
+import java.util.List;
+
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
@@ -16,4 +18,10 @@ public interface EstudiantesGlobalRep extends JpaRepository<Estudiantesglobal, I
 	@Query(value = "... column=:param ", nativeQuery=true)
 	void eliminar( Integer param);
 	*/
+	
+	
+	@Modifying
+	@Transactional
+	@Query(value = "SELECT * FROM estudiantesglobal where ESTUDIANTE_ID in :param ", nativeQuery=true)
+	List<Estudiantesglobal> buscarEstudiantesIds( String param);
 }
