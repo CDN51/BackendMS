@@ -19,6 +19,7 @@ import co.edu.unicauca.core.entity.Estudiantesglobal;
 import co.edu.unicauca.core.repository.EstudiantesGlobalRep;
 import co.edu.unicauca.core.service.EstudiantesGlobalServiceInt;
 
+//Versión 1.1
 
 @Controller
 @CrossOrigin(origins = "*")
@@ -38,6 +39,4 @@ public class EstudiantesGlobalController {
 	public List<Estudiantesglobal> estudiantesGlobalesId(@RequestBody List<Integer> ids){
 		return estGlService.getEstudiantesglobalesIds(ids);
 	}
-	
-	
 }
