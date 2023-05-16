@@ -12,7 +12,7 @@ public interface EstudianteAsignaturaServiceInt {
 	public EstudianteAsignatura registrarEstudianteEnAsignatura(EstudianteAsignatura nuevoRegistro);
 	public void eliminarEstudiante(Integer idEstudiante, Integer idAsignatura);
 	public Optional<EstudianteAsignatura> buscarEstudianteEnAsignatura(Integer id);
-	public List<EstudianteAsignatura> listarEstudiantes();
+	public List<EstudianteAsignatura> listarEstudiantes(Integer idAsignatura);
 	public void eliminarTodosLosEstudiantes(Integer idAsignatura);
 	
 }

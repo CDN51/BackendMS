@@ -1,5 +1,7 @@
 package co.edu.unicauca.core.repository;
 
+import java.util.List;
+
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
@@ -16,6 +18,13 @@ public interface EstudianteAsignaturaRep extends JpaRepository<EstudianteAsignat
 	@Query(value = "DELETE FROM estudianteasignatura WHERE ESTUDIANTE_ID=:idEstudiante AND ASIGNATURA_ID=:id_asignatura", nativeQuery=true)
 	void eliminar( Integer idEstudiante,  Integer id_asignatura);
 	
+	@Modifying
+	@Query(value = "SELECT * FROM estudianteasignatura WHERE ESTUDIANTE_ID=:idEstudiante AND ASIGNATURA_ID=:id_asignatura", nativeQuery=true)
+	void buscarEstudianteEnAsignatura( Integer idEstudiante,  Integer id_asignatura);
+	
+	@Modifying
+	@Query(value = "SELECT * FROM estudianteasignatura WHERE ASIGNATURA_ID=:idAsignatura", nativeQuery=true)
+	List<EstudianteAsignatura> listarEstudianteEnAsignatura(Integer idAsignatura);
 	
 	@Modifying
 	@Transactional

@@ -53,10 +53,10 @@ public class EstudianteAsignaturaController {
 	}
 	
 	// HE08 - HU04
-	@GetMapping("/ListarEstudiantes")
+	@GetMapping("/ListarEstudiantes/{id}")
 	@ResponseBody
-	public List<EstudianteAsignatura> listarEstudiantes(){
-		return estudianteAsignaturaServiceInt.listarEstudiantes();
+	public List<EstudianteAsignatura> listarEstudiantes(@PathVariable Integer id){
+		return estudianteAsignaturaServiceInt.listarEstudiantes(id);
 	}
 	
 	// HE08 - HU05

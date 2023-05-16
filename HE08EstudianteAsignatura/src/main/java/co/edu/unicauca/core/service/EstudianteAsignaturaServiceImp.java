@@ -35,8 +35,8 @@ public class EstudianteAsignaturaServiceImp implements EstudianteAsignaturaServi
 
 
 	@Override
-	public List<EstudianteAsignatura> listarEstudiantes() {
-		return estudianteAsignaturaRep.findAll();
+	public List<EstudianteAsignatura> listarEstudiantes(Integer idAsignatura) {
+		return estudianteAsignaturaRep.listarEstudianteEnAsignatura(idAsignatura);
 	}
 
 	@Override
