@@ -36,7 +36,7 @@ public class EstudianteAsignaturaController {
 	}
 	
 	// HE08 - HU02
-	@DeleteMapping("/EliminarEstudiante/")
+	@DeleteMapping("/EliminarEstudiante")
 	@ResponseBody
 	public void eliminarEstudiante(@RequestBody EstudianteAsignatura estudianteAsignatura ) {
 		Integer idEstudiante = estudianteAsignatura.getEstudiante_id();
@@ -44,8 +44,8 @@ public class EstudianteAsignaturaController {
 		estudianteAsignaturaServiceInt.eliminarEstudiante(idEstudiante, id_asignatura);
 	}
 
-	// HE08 - HU03
-	@GetMapping("/BuscarEstudiante/{id}")
+	
+	@GetMapping("/BuscarEstudiante")
 	@ResponseBody
 	public Optional<EstudianteAsignatura> buscarEstudiante(@PathVariable Integer id) {
 		return estudianteAsignaturaServiceInt.buscarEstudianteEnAsignatura(id);
@@ -53,16 +53,16 @@ public class EstudianteAsignaturaController {
 	}
 	
 	// HE08 - HU04
-	@GetMapping("/ListarEstudiantes/{id}")
+	@GetMapping("/ListarEstudiantes/{idAsignatura}")
 	@ResponseBody
-	public List<Integer> listarEstudiantes(@PathVariable Integer id){
-		return estudianteAsignaturaServiceInt.listarEstudiantes(id);
+	public List<Integer> listarEstudiantes(@PathVariable Integer idAsignatura){
+		return estudianteAsignaturaServiceInt.listarEstudiantes(idAsignatura);
 	}
 	
 	// HE08 - HU05
-	@DeleteMapping("/EliminarEstudiantes/")
+	@DeleteMapping("/EliminarEstudiantes/{idAsignatura}")
 	@ResponseBody
-	public void eliminarEstudiantes(Integer idAsignatura) {
+	public void eliminarEstudiantes(@PathVariable Integer idAsignatura) {
 		estudianteAsignaturaServiceInt.eliminarTodosLosEstudiantes(idAsignatura);
 	}
 	
