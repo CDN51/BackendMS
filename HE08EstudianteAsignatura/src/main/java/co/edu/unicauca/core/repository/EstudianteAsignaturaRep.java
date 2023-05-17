@@ -23,8 +23,8 @@ public interface EstudianteAsignaturaRep extends JpaRepository<EstudianteAsignat
 	void buscarEstudianteEnAsignatura( Integer idEstudiante,  Integer id_asignatura);
 	
 	@Modifying
-	@Query(value = "SELECT * FROM estudianteasignatura WHERE ASIGNATURA_ID=:idAsignatura", nativeQuery=true)
-	List<EstudianteAsignatura> listarEstudianteEnAsignatura(Integer idAsignatura);
+	@Query(value = "SELECT ESTUDIANTE_ID FROM estudianteasignatura WHERE ASIGNATURA_ID=:idAsignatura", nativeQuery=true)
+	List<Integer> listarEstudianteEnAsignatura(Integer idAsignatura);
 	
 	@Modifying
 	@Transactional

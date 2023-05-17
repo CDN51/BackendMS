@@ -55,7 +55,7 @@ public class EstudianteAsignaturaController {
 	// HE08 - HU04
 	@GetMapping("/ListarEstudiantes/{id}")
 	@ResponseBody
-	public List<EstudianteAsignatura> listarEstudiantes(@PathVariable Integer id){
+	public List<Integer> listarEstudiantes(@PathVariable Integer id){
 		return estudianteAsignaturaServiceInt.listarEstudiantes(id);
 	}
 	
