@@ -36,7 +36,7 @@ public class EstudiantesGlobalController {
 	//
 	@GetMapping("/estudiantesglobalesid")
 	@ResponseBody
-	public List<Estudiantesglobal> estudiantesGlobalesId(@RequestBody List<Integer> ids){
-		return estGlService.getEstudiantesglobalesIds(ids);
+	public List<Estudiantesglobal> estudiantesGlobalesId(@RequestParam List<Integer> estudiantesId){
+		return estGlService.getEstudiantesglobalesIds(estudiantesId);
 	}
 }
