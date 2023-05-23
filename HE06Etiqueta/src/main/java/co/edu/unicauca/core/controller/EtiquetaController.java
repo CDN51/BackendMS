@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import co.edu.unicauca.core.entity.Etiqueta;
 import co.edu.unicauca.core.repository.EtiquetaRep;
 import co.edu.unicauca.core.service.EtiquetaServiceInt;
-//HE06 v1
+//HE06 v1.1
 
 @Controller
 @CrossOrigin(origins = "*")
