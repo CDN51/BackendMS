@@ -19,6 +19,7 @@ import co.edu.unicauca.core.entity.CentroSalud;
 import co.edu.unicauca.core.entity.Servicio;
 import co.edu.unicauca.core.service.CentroSaludServiceInt;
 
+//Hx02 V1
 
 @Controller
 @CrossOrigin(origins = "*")
