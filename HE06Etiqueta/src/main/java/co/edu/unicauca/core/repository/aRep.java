@@ -5,11 +5,11 @@ import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
-import co.edu.unicauca.core.entity.pEntity;
+import co.edu.unicauca.core.entity.Etiqueta;
 import jakarta.transaction.Transactional;
 
 @Repository
-public interface aRep extends JpaRepository<pEntity, Integer> {
+public interface aRep extends JpaRepository<Etiqueta, Integer> {
 /*
 	@Modifying
 	@Transactional
