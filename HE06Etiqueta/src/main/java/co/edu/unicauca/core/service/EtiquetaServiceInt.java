@@ -13,7 +13,7 @@ public interface EtiquetaServiceInt {
 	List<Etiqueta> listarEtiquetas();
 	Etiqueta crearEtiqueta(Etiqueta etiqueta);
 	Etiqueta eliminarEtiqueta(Integer etiqueta_id);
-	Etiqueta asociarServicioEtiqueta(String servicio);
+	Etiqueta asociarServicioEtiqueta(Integer etiqueta_id, String servicio);
 	Etiqueta getEtiqueta(Integer etiqueta_id);
 	Etiqueta eliminarServicioEtiqueta(Integer etiqueta_id);
 	
