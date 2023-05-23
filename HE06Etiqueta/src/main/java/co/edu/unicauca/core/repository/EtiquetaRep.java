@@ -16,4 +16,9 @@ public interface EtiquetaRep extends JpaRepository<Etiqueta, Integer> {
 	@Query(value = "UPDATE `msetiquetas`.`etiqueta` SET `servicio` =:servicio WHERE (`etiqueta_id` =:etiqueta_id) ", nativeQuery=true)
 	Etiqueta asociarServicio(Integer etiqueta_id, String servicio);
 	
+	
+	@Modifying
+	@Transactional
+	@Query(value = "UPDATE `msetiquetas`.`etiqueta` SET `servicio` = NULL WHERE (`etiqueta_id` =:etiqueta_id) ", nativeQuery=true)
+	Etiqueta eliminarServicio(Integer etiqueta_id);
 }
