@@ -21,33 +21,63 @@ public class EtiquetaServiceImp implements EtiquetaServiceInt {
 
 	@Override
 	public Etiqueta crearEtiqueta(Etiqueta etiqueta) {
-		if (etiquetaRep.findById(etiqueta.getEtiqueta_id())==null) {
+		Etiqueta aux;
+		try {
+			aux=etiquetaRep.findById(etiqueta.getEtiqueta_id()).get();
+			if (aux!=null) {
+				return null;
+			}
+			return etiquetaRep.save(etiqueta);
+			
+			
+		} catch (Exception e) {
 			return etiquetaRep.save(etiqueta);
 		}
-		return null;
+		
 	}
 
 	@Override
 	public Etiqueta eliminarEtiqueta(Integer etiqueta_id) {
-		Etiqueta deletedEtiqueta = etiquetaRep.findById(etiqueta_id).get();
-		etiquetaRep.deleteById(etiqueta_id);
-		return deletedEtiqueta;
+		Etiqueta deletedEtiqueta;
+		try {
+			deletedEtiqueta = etiquetaRep.findById(etiqueta_id).get();
+			if (deletedEtiqueta!=null) {
+				etiquetaRep.deleteById(etiqueta_id);
+				return deletedEtiqueta;
+			}
+			return null;
+		} catch (Exception e) {
+			return null;
+		}
 		
 	}
 
 	@Override
 	public Etiqueta asociarServicioEtiqueta(Integer etiqueta_id, String servicio) {
-		return etiquetaRep.asociarServicio(etiqueta_id, servicio);
+		Integer result = etiquetaRep.asociarServicio(etiqueta_id, servicio);
+		if (result==1) {
+			return etiquetaRep.findById(etiqueta_id).get();
+		}
+		return null;
 	}
 
 	@Override
 	public Etiqueta getEtiqueta(Integer etiqueta_id) {
-		return etiquetaRep.findById(etiqueta_id).get();
+		try {
+			return etiquetaRep.findById(etiqueta_id).get();
+		} catch (Exception e) {
+			return null;
+		}
+		
 	}
 
 	@Override
 	public Etiqueta eliminarServicioEtiqueta(Integer etiqueta_id) {
-		return etiquetaRep.eliminarServicio(etiqueta_id);
+		Integer aux = etiquetaRep.eliminarServicio(etiqueta_id);
+		if (aux==1) {
+			return etiquetaRep.findById(etiqueta_id).get();
+		}
+		return null;
 	}
 	
 }
