@@ -9,11 +9,11 @@ import co.edu.unicauca.core.entity.Etiqueta;
 import jakarta.transaction.Transactional;
 
 @Repository
-public interface aRep extends JpaRepository<Etiqueta, Integer> {
-/*
+public interface EtiquetaRep extends JpaRepository<Etiqueta, Integer> {
+
 	@Modifying
 	@Transactional
-	@Query(value = "... column=:param ", nativeQuery=true)
-	void eliminar( Integer param);
-	*/
+	@Query(value = "UPDATE `msetiquetas`.`etiqueta` SET `servicio` =:servicio WHERE (`etiqueta_id` =:etiqueta_id) ", nativeQuery=true)
+	Etiqueta asociarServicio(Integer etiqueta_id, String servicio);
+	
 }

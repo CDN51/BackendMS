@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import co.edu.unicauca.core.entity.Etiqueta;
-import co.edu.unicauca.core.repository.aRep;
+import co.edu.unicauca.core.repository.EtiquetaRep;
 
 @Service
 public class aServiceImp implements aServiceInt {

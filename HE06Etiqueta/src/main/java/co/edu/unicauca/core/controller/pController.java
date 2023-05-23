@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import co.edu.unicauca.core.entity.Etiqueta;
-import co.edu.unicauca.core.repository.aRep;
+import co.edu.unicauca.core.repository.EtiquetaRep;
 import co.edu.unicauca.core.service.aServiceInt;
 
 
