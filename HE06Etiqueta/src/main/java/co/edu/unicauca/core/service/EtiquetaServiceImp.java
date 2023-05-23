@@ -36,24 +36,18 @@ public class EtiquetaServiceImp implements EtiquetaServiceInt {
 	}
 
 	@Override
-	public Etiqueta asociarServicioEtiqueta(String servicio) {
-		// TODO Auto-generated method stub
-		return null;
+	public Etiqueta asociarServicioEtiqueta(Integer etiqueta_id, String servicio) {
+		return etiquetaRep.asociarServicio(etiqueta_id, servicio);
 	}
 
 	@Override
 	public Etiqueta getEtiqueta(Integer etiqueta_id) {
-		// TODO Auto-generated method stub
-		return null;
+		return etiquetaRep.findById(etiqueta_id).get();
 	}
 
 	@Override
 	public Etiqueta eliminarServicioEtiqueta(Integer etiqueta_id) {
-		// TODO Auto-generated method stub
-		return null;
+		return etiquetaRep.eliminarServicio(etiqueta_id);
 	}
-
-	//@Autowired
-	//private Repository;
 	
 }
