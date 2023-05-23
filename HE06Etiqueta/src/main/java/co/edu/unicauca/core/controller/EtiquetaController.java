@@ -38,14 +38,14 @@ public class EtiquetaController {
 	//HU02 Crear Etiqueta
 	@PostMapping("/Etiquetas")
 	@ResponseBody
-	public Etiqueta crearEtiqueta(Etiqueta etiqueta) {
+	public Etiqueta crearEtiqueta(@RequestBody Etiqueta etiqueta) {
 		return etiquetaServ.crearEtiqueta(etiqueta);
 	}
 	
 	//HU03 Eliminar etiqueta
 	@DeleteMapping("/Etiquetas/{etiqueta_id}")
 	@ResponseBody
-	public Etiqueta eliminarEtiqueta(Integer etiqueta_id) {
+	public Etiqueta eliminarEtiqueta(@PathVariable Integer etiqueta_id) {
 		return etiquetaServ.eliminarEtiqueta(etiqueta_id);
 	}
 	
@@ -65,16 +65,16 @@ public class EtiquetaController {
 	}
 	
 	//HU05 Listar asociaciones de las etiquetas
-	@GetMapping("/Etiqueta")
+	@GetMapping("/Etiqueta/{etiqueta_id}")
 	@ResponseBody
-	public Etiqueta obtenerEtiqueta(Integer etiqueta_id) {
+	public Etiqueta obtenerEtiqueta(@PathVariable Integer etiqueta_id) {
 		return etiquetaServ.getEtiqueta(etiqueta_id);
 	}
 	
 	//HU06 Eliminar un servicio asociado a una etiqueta
-	@PutMapping("/Etiqueta")
+	@PutMapping("/Etiqueta/{etiqueta_id}")
 	@ResponseBody
-	public Etiqueta eliminarServicioEtiqueta(Integer etiqueta_id) {
+	public Etiqueta eliminarServicioEtiqueta(@PathVariable Integer etiqueta_id) {
 		return etiquetaServ.eliminarServicioEtiqueta(etiqueta_id);
 	}
 	
