@@ -10,7 +10,7 @@ import co.edu.unicauca.core.entity.Etiqueta;
 import co.edu.unicauca.core.repository.EtiquetaRep;
 
 @Service
-public class aServiceImp implements aServiceInt {
+public class aServiceImp implements EtiquetaServiceInt {
 
 	//@Autowired
 	//private Repository;
