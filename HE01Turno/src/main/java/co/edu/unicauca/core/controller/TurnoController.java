@@ -21,7 +21,7 @@ import co.edu.unicauca.core.entity.Jornada;
 import co.edu.unicauca.core.entity.Turno;
 import co.edu.unicauca.core.service.TurnoServiceInt;
 
-
+//v 1
 
 @Controller
 @CrossOrigin(origins = "*")
