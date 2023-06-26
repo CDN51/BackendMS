@@ -1,5 +1,6 @@
 package co.edu.unicauca.core.service;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -64,7 +65,21 @@ public class TurnoServiceImp implements TurnoServiceInt {
 		turnoRepo.deleteById(turno_id);
 		
 	}
+	@Override
+	public List<Turno> listarTurnosEstudiante(Integer estudiante_id) {
+		return turnoRepo.findByEstudiante(estudiante_id);
+	}
 
+	@Override
+	public List<Turno> listarTurnosFecha(LocalDate fecha) {
+		return turnoRepo.findByFecha(fecha);
+	}
+	@Override
+	public List<Turno> listarTurnosEstudianteFecha(List<String> params) {
+		Integer estudiante_id=Integer.parseInt(params.get(0));
+		LocalDate fecha = LocalDate.parse(params.get(1));
+		return turnoRepo.findByEstudianteFecha(estudiante_id, fecha);
+	}
 	
 	public String formaterString(String jornada) {
 		String[] values = jornada.split(",");
@@ -154,6 +169,10 @@ public class TurnoServiceImp implements TurnoServiceInt {
 			
 		return ret;
 	}
+
+	
+
+	
 
 	
 	

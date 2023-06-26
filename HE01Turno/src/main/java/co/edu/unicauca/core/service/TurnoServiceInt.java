@@ -1,5 +1,6 @@
 package co.edu.unicauca.core.service;
 
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 
@@ -41,6 +42,12 @@ public interface TurnoServiceInt {
 	
 	//REQUERIDAS
 	public List<Jornada> listarJornadas();
+	
+	public List<Turno> listarTurnosEstudiante(Integer estudiante_id);
+	
+	public List<Turno> listarTurnosFecha(LocalDate fecha);
+	
+	public List<Turno> listarTurnosEstudianteFecha(List<String> params);
 	
 	
 	

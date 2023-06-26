@@ -1,6 +1,7 @@
 package co.edu.unicauca.core.controller;
 
 import java.security.PublicKey;
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 
@@ -70,6 +71,21 @@ public class TurnoController {
 		return turnoServiceInt.listarTurno(turno_id);
 	}
 	
+	@GetMapping("/TurnoE/{estudiante_id}")
+	@ResponseBody
+	public List<Turno> listarTurnosEstudiante(@PathVariable Integer estudiante_id){
+		return turnoServiceInt.listarTurnosEstudiante(estudiante_id);
+	}
+	@GetMapping("/TurnoF/{fecha}")
+	@ResponseBody
+	public List<Turno> listarTurnosEstudiante(@PathVariable LocalDate fecha){
+		return turnoServiceInt.listarTurnosFecha(fecha);
+	}
+	@GetMapping("/TurnoEF")
+	@ResponseBody
+	public List<Turno> listarTurnosEstudianteFecha(@RequestBody List<String> params){
+		return turnoServiceInt.listarTurnosEstudianteFecha(params);
+	}
 	//HE06
 	//HE07
 	
