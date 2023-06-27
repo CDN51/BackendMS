@@ -19,6 +19,7 @@ import co.edu.unicauca.core.entity.EstudianteAsignatura;
 import co.edu.unicauca.core.repository.EstudianteAsignaturaRep;
 import co.edu.unicauca.core.service.EstudianteAsignaturaServiceInt;
 
+<<<<<<< HEAD
 // Versión 2  
 
 @Controller
@@ -71,6 +72,53 @@ public class EstudianteAsignaturaController {
 	@ResponseBody
 	public List<EstudianteAsignatura> listarTodo() {
 		return estudianteAsignaturaServiceInt.listarTodo();
+=======
+
+@Controller
+@CrossOrigin(origins = "*")
+public class EstudianteAsignaturaController {
+	
+	@Autowired
+	private EstudianteAsignaturaServiceInt estudianteAsignaturaServiceInt;
+
+	
+	// HE08 - HU01
+	@PostMapping("/RegistrarEstudiante")
+	@ResponseBody
+	public EstudianteAsignatura registrarEstudiante(@RequestBody EstudianteAsignatura estudianteAsignatura ){
+		return estudianteAsignaturaServiceInt.registrarEstudianteEnAsignatura(estudianteAsignatura);
+	}
+	
+	// HE08 - HU02
+	@DeleteMapping("/EliminarEstudiante")
+	@ResponseBody
+	public void eliminarEstudiante(@RequestBody EstudianteAsignatura estudianteAsignatura ) {
+		Integer idEstudiante = estudianteAsignatura.getEstudiante_id();
+		Integer id_asignatura = estudianteAsignatura.getAsignatura_id();
+		estudianteAsignaturaServiceInt.eliminarEstudiante(idEstudiante, id_asignatura);
+	}
+
+	
+	@GetMapping("/BuscarEstudiante")
+	@ResponseBody
+	public Optional<EstudianteAsignatura> buscarEstudiante(@PathVariable Integer id) {
+		return estudianteAsignaturaServiceInt.buscarEstudianteEnAsignatura(id);
+
+	}
+	
+	// HE08 - HU04
+	@GetMapping("/ListarEstudiantes/{idAsignatura}")
+	@ResponseBody
+	public List<Integer> listarEstudiantes(@PathVariable Integer idAsignatura){
+		return estudianteAsignaturaServiceInt.listarEstudiantes(idAsignatura);
+	}
+	
+	// HE08 - HU05
+	@DeleteMapping("/EliminarEstudiantes/{idAsignatura}")
+	@ResponseBody
+	public void eliminarEstudiantes(@PathVariable Integer idAsignatura) {
+		estudianteAsignaturaServiceInt.eliminarTodosLosEstudiantes(idAsignatura);
+>>>>>>> branch 'HE08-Dev' of https://github.com/CDN51/BackendMS.git
 	}
 	
 }

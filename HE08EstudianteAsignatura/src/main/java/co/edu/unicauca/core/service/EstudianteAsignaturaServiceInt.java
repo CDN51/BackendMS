@@ -14,6 +14,9 @@ public interface EstudianteAsignaturaServiceInt {
 	public Optional<EstudianteAsignatura> buscarEstudianteEnAsignatura(Integer id);
 	public List<Integer> listarEstudiantes(Integer idAsignatura);
 	public void eliminarTodosLosEstudiantes(Integer idAsignatura);
+<<<<<<< HEAD
 	public List<EstudianteAsignatura> listarTodo();
+=======
+>>>>>>> branch 'HE08-Dev' of https://github.com/CDN51/BackendMS.git
 	
 }

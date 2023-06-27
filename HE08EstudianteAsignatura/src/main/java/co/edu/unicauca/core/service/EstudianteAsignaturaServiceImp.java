@@ -43,10 +43,13 @@ public class EstudianteAsignaturaServiceImp implements EstudianteAsignaturaServi
 	public void eliminarTodosLosEstudiantes(Integer idAsignatura) {
 		estudianteAsignaturaRep.eliminarEstudiantesPorAsignatura(idAsignatura);
 	}
+<<<<<<< HEAD
 
 
 	@Override
 	public List<EstudianteAsignatura> listarTodo() {
 		return estudianteAsignaturaRep.findAll();
 	}
+=======
+>>>>>>> branch 'HE08-Dev' of https://github.com/CDN51/BackendMS.git
 }
