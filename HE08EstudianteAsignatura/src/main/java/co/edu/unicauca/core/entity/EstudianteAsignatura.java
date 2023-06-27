@@ -1,5 +1,4 @@
 package co.edu.unicauca.core.entity;
-
 import org.hibernate.annotations.ColumnDefault;
 
 import jakarta.persistence.Column;

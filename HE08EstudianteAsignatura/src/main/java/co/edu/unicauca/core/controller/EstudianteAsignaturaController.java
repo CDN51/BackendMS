@@ -18,7 +18,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import co.edu.unicauca.core.entity.EstudianteAsignatura;
 import co.edu.unicauca.core.repository.EstudianteAsignaturaRep;
 import co.edu.unicauca.core.service.EstudianteAsignaturaServiceInt;
-
 // Versión 2  
 
 @Controller
