@@ -49,4 +49,39 @@ public class EstudianteAsignaturaServiceImp implements EstudianteAsignaturaServi
 		return estudianteAsignaturaRep.findAll();
 	}
 
+
+	@Override
+	public Integer setEstado() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+	@Override
+	public Integer setEstadoON(List<String> params) {
+		Integer estudiante_id;
+		Integer asignatura_id;
+		try {
+			estudiante_id=Integer.parseInt(params.get(0));
+			asignatura_id=Integer.parseInt(params.get(1));
+			return estudianteAsignaturaRep.setEstadoON(asignatura_id, estudiante_id);
+		} catch (Exception e) {
+			return 0; 
+		}		
+	}
+
+
+	@Override
+	public Integer setEstadoOFF(List<String> params) {
+		Integer estudiante_id;
+		Integer asignatura_id;
+		try {
+			estudiante_id=Integer.parseInt(params.get(0));
+			asignatura_id=Integer.parseInt(params.get(1));
+			return estudianteAsignaturaRep.setEstadoOFF(asignatura_id, estudiante_id);
+		} catch (Exception e) {
+			return 0; 
+		}		
+	}
+
 }

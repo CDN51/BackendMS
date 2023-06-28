@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 import co.edu.unicauca.core.entity.EstudianteAsignatura;
@@ -30,4 +31,15 @@ public interface EstudianteAsignaturaRep extends JpaRepository<EstudianteAsignat
 	@Transactional
 	@Query(value = "DELETE FROM estudianteasignatura WHERE ASIGNATURA_ID=:idAsignatura", nativeQuery=true)
 	void eliminarEstudiantesPorAsignatura(Integer idAsignatura);
+	
+	@Modifying
+	@Transactional
+	@Query(value = "UPDATE estudianteasignatura SET estado = '1' WHERE ASIGNATURA_ID =:pasignatura_id and ESTUDIANTE_ID=:pestudiante_id", nativeQuery=true)
+	Integer setEstadoON(@Param("pasignatura_id") Integer idAsignatura, @Param("pestudiante_id") Integer estudiante_id);
+	
+	@Modifying
+	@Transactional
+	@Query(value = "UPDATE estudianteasignatura SET estado = '0' WHERE ASIGNATURA_ID =:pasignatura_id and ESTUDIANTE_ID=:pestudiante_id", nativeQuery=true)
+	Integer setEstadoOFF(@Param("pasignatura_id") Integer idAsignatura, @Param("pestudiante_id") Integer estudiante_id);
+	
 }

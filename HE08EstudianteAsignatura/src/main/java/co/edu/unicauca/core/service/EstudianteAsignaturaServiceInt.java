@@ -15,5 +15,8 @@ public interface EstudianteAsignaturaServiceInt {
 	public List<Integer> listarEstudiantes(Integer idAsignatura);
 	public void eliminarTodosLosEstudiantes(Integer idAsignatura);
 	public List<EstudianteAsignatura> listarTodo();
+	public Integer setEstado();
+	public Integer setEstadoON(List<String> params);
+	public Integer setEstadoOFF(List<String> params);
 	
 }
