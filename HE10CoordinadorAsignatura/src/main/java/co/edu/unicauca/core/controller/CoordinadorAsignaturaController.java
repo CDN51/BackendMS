@@ -19,6 +19,7 @@ import co.edu.unicauca.core.entity.Asignatura;
 import co.edu.unicauca.core.entity.Coordinador;
 import co.edu.unicauca.core.service.CoordinadorAsignaturaServiceInt;
 
+//HE10 v1
 
 @Controller
 @CrossOrigin(origins = "*")
